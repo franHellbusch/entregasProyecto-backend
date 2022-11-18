@@ -1,0 +1,32 @@
+[
+  {
+    "nombre": "producto1",
+    "precio": 200,
+    "fotoURL": "http5",
+    "descripcion": "descripcion del producto1",
+    "codigo": "sadasfsagsg",
+    "stock": 10,
+    "id": "597df5d0-1fa3-4098-9381-325447130594",
+    "timestamp": 1668625968127
+  },
+  {
+    "nombre": "producto2",
+    "precio": 400,
+    "fotoURL": "http2",
+    "descripcion": "descripcion del producto2",
+    "codigo": "sdgnasdgnña",
+    "stock": 5,
+    "id": "c583ab0e-8b95-4b01-b228-2aae4ed42cc6",
+    "timestamp": 1668730600222
+  },
+  {
+    "nombre": "producto3",
+    "precio": 200,
+    "fotoURL": "http3",
+    "descripcion": "descripcion del producto3",
+    "codigo": "sdgnasdgnña",
+    "stock": 20,
+    "id": "5c41dc29-a0b2-4477-ba01-5589494defad",
+    "timestamp": 1668730623852
+  }
+]
