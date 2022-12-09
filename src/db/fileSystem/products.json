@@ -1,0 +1,29 @@
+[
+  {
+    "nombre": "producto2",
+    "precio": 400,
+    "fotoURL": "http2",
+    "descripcion": "descripcion del producto2",
+    "stock": 5,
+    "timestamp": 1670507003.143,
+    "id": "f08c6f5d-2196-4549-b975-c0ced02f75d1"
+  },
+  {
+    "nombre": "producto3",
+    "precio": 300,
+    "fotoURL": "http3",
+    "descripcion": "descripcion del producto3",
+    "stock": 10,
+    "timestamp": 1670507864.841,
+    "id": "974ebc6b-1e39-4cc5-bbac-63ee920ff1c5"
+  },
+  {
+    "nombre": "product1",
+    "precio": 1000,
+    "fotoURL": "http1",
+    "descripcion": "descripcion producto1",
+    "stock": 100,
+    "timestamp": 1670538892.401,
+    "id": "16e81448-940e-4c4c-b1e4-da64bbabdb66"
+  }
+]
