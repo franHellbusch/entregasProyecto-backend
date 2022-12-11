@@ -1,13 +1,16 @@
 import 'dotenv/config'
+import ProductDto from '../dtos/product.dto.js'
 const productsService = await (
-    await import(`../services/daos/productos/productosDao${process.env.DATACORE}.js`)
+    await import(`../daos/productos/productosDao${process.env.DATACORE}.js`)
 ).default
 
 export const getAll = async (_req, res, next) => {
     try {
         const data = await productsService.getAll()
-        if (!data.success) return res.status(400).json(data)
-        res.status(200).json(data)
+        res.status(200).json({
+            success: true,
+            data: data
+        })
     } catch (err) {
         next(err)
     }
@@ -18,8 +21,11 @@ export const getById = async (req, res, next) => {
         const { id } = req.params
 
         const data = await productsService.getById(id)
-        if (!data.success) return res.status(400).json(data)
-        res.status(200).json(data)
+        const dataDto = new ProductDto(data)
+        res.status(200).json({
+            success: true,
+            data: dataDto.build()
+        })
     } catch (err) {
         next(err)
     }
@@ -30,8 +36,11 @@ export const saveProduct = async (req, res, next) => {
         const { body } = req
 
         const data = await productsService.save(body)
-        if (!data.success) return res.status(400).json(data)
-        res.status(200).json(data)
+        const dataDto = new ProductDto(data)
+        res.status(200).json({
+            success: true,
+            data: dataDto.build()
+        })
     } catch (err) {
         next(err)
     }
@@ -43,8 +52,11 @@ export const updateProduct = async (req, res, next) => {
         const { id } = req.params
 
         const data = await productsService.updateProduct(id, body)
-        if (!data.success) return res.status(400).json(data)
-        res.status(200).json(data)
+        const dataDto = new ProductDto(data)
+        res.status(200).json({
+            success: true,
+            data: dataDto.build()
+        })
     } catch (err) {
         next(err)
     }
@@ -55,8 +67,10 @@ export const deleteProduct = async (req, res, next) => {
         const { id } = req.params
 
         const data = await productsService.deleteById(id)
-        if (!data.success) return res.status(400).json(data)
-        res.status(200).json(data)
+        res.status(200).json({
+            success: true,
+            message: data
+        })
     } catch (err) {
         next(err)
     }

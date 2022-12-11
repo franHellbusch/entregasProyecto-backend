@@ -1,14 +1,15 @@
 import { Schema, model } from "mongoose"
 import { productSchema } from "./product.model.js"
 
-const carritoSchema = new Schema({
-    uuid: {
-        type: String,
-        required: true,
-        unique: true
+const carritoSchema = new Schema(
+    {
+        products: [productSchema]
     },
-    data: [productSchema]
-})
+    {
+        timestamps: true,
+        versionKey: false
+    }
+)
 
 const carritoModel = model('carrito', carritoSchema)
 

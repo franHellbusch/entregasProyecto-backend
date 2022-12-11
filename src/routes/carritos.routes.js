@@ -1,17 +1,18 @@
 import { Router } from "express"
-import { deleteCart, getCart, postCart, postProduct, deleteProduct } from "../controllers/carritos.controller.js"
-import { reqIdCartValidation, reqIdValidation } from "../middlewares/reqValidations.js"
+import { deleteCart, getAll, getCart, postCart, postProduct, deleteProduct } from "../controllers/carritos.controller.js"
 
 const router = Router()
 
 router.post('/', postCart)
 
-router.get('/:id/productos', reqIdValidation, getCart)
+router.get('/', getAll)
+
+router.get('/:id/productos', getCart)
 
 router.post('/:id/productos/:prod_id', postProduct)
 
 router.delete('/:id', deleteCart)
 
-router.delete('/:id/productos/:prod_id', reqIdCartValidation, deleteProduct)
+router.delete('/:id/productos/:prod_id', deleteProduct)
 
 export default router

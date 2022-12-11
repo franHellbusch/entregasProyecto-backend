@@ -2,11 +2,6 @@ import { Schema, model } from "mongoose"
 
 const productSchema = new Schema(
     {
-        uuid: {
-            type: String,
-            required: true,
-            unique: true
-        },
         nombre: {
             type: String,
             required: true
